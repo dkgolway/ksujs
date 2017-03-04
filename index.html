@@ -5,8 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>0</h1>
-	<h2>wildcats</h2>
+	
+	<img src="https://placekitten.com/500/400">
 
 <div>
 	<button id="decrease">-</button>
@@ -16,15 +16,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-	var wildcat = 0; 
+	var address ="https://placekitten.com/500/"
+	var picIndex = 400;
+	
 	$('button').click(function(){
 		
-		if ($(this).attr('id')==='increase'){wildcat = wildcat + 1;
+		if ($(this).attr('id')==='increase'){picIndex = picIndex + 1;
 		}else{ 
-			wildcat = wildcat - 1;
+			picIndex = picIndex - 1;
 		}
-		$('h1').text(wildcat);
-		
+		var combine = address + picIndex;
+		$('img').attr("src", combine);
 		
 	});
 
